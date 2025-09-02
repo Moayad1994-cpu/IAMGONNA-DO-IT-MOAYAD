@@ -1,168 +1,11 @@
- // Global Variables
+// Global Variables
 let currentLanguage = 'en';
 let isDarkMode = false;
 let isLoggedIn = false;
 let currentUser = null;
-let apiKey = localStorage.getItem('geminiApiKey') || '';
+let services = [];
 let visitorCount = 1247;
 let onlineUsers = 23;
-
-// Services Data
-const services = [
-    {
-        id: 'website-design',
-        nameEn: 'Website Design',
-        nameAr: 'تصميم المواقع',
-        descriptionEn: 'Professional responsive websites with modern design and optimal user experience',
-        descriptionAr: 'مواقع إلكترونية احترافية متجاوبة مع تصميم حديث وتجربة مستخدم مثلى',
-        price: 10,
-        image: 'https://i.postimg.cc/BbkrDgyV/service-website-design.png'
-    },
-    {
-        id: 'app-development',
-        nameEn: 'Professional Application Development',
-        nameAr: 'تطوير التطبيقات الاحترافية',
-        descriptionEn: 'Custom mobile and web applications built with cutting-edge technology',
-        descriptionAr: 'تطبيقات جوال وويب مخصصة مبنية بأحدث التقنيات',
-        price: 0,
-        image: 'https://i.postimg.cc/qMCVrP6V/service-app-development.png'
-    },
-    {
-        id: 'cv-creation',
-        nameEn: 'Professional CV Creation (ATS System)',
-        nameAr: 'إنشاء السيرة الذاتية الاحترافية (نظام ATS)',
-        descriptionEn: 'ATS-optimized resumes that pass automated screening systems',
-        descriptionAr: 'سير ذاتية محسنة لأنظمة ATS تجتاز أنظمة الفحص الآلي',
-        price: 12,
-        image: 'https://i.postimg.cc/0ypTM7CV/service-cv-creation.png'
-    },
-    {
-        id: 'graphic-design',
-        nameEn: 'Graphic Design, Logo Creation, Advertising and Poster Design',
-        nameAr: 'التصميم الجرافيكي وإنشاء الشعارات والإعلانات والملصقات',
-        descriptionEn: 'Creative visual designs for branding, marketing, and promotional materials',
-        descriptionAr: 'تصاميم بصرية إبداعية للعلامة التجارية والتسويق والمواد الترويجية',
-        price: 0,
-        image: 'https://i.postimg.cc/nhpJ1dry/service-graphic-design.png'
-    },
-    {
-        id: 'ui-ux-design',
-        nameEn: 'Website Interface Design',
-        nameAr: 'تصميم واجهات المواقع',
-        descriptionEn: 'User-centered interface design for optimal user experience',
-        descriptionAr: 'تصميم واجهات محورها المستخدم لتجربة مستخدم مثلى',
-        price: 0,
-        image: 'https://i.postimg.cc/GmK1gksH/service-ui-ux-design.png'
-    },
-    {
-        id: 'engineering-drawing',
-        nameEn: 'Engineering Drawing',
-        nameAr: 'الرسم الهندسي',
-        descriptionEn: 'Technical drawings and blueprints for engineering projects',
-        descriptionAr: 'رسومات تقنية ومخططات للمشاريع الهندسية',
-        price: 0,
-        image: 'https://i.postimg.cc/KYYh6RnQ/service-engineering-drawing.png'
-    },
-    {
-        id: 'ai-models',
-        nameEn: 'AI Models and Systems',
-        nameAr: 'نماذج وأنظمة الذكاء الاصطناعي',
-        descriptionEn: 'Custom AI solutions and machine learning models for your business',
-        descriptionAr: 'حلول ذكاء اصطناعي مخصصة ونماذج تعلم آلي لأعمالك',
-        price: 0,
-        image: 'https://i.postimg.cc/65NJ9Hr8/service-ai-models.png'
-    },
-    {
-        id: 'video-production',
-        nameEn: 'Advertising Videos and Project Filming',
-        nameAr: 'فيديوهات إعلانية وتصوير المشاريع',
-        descriptionEn: 'Professional video production for marketing and promotional content',
-        descriptionAr: 'إنتاج فيديو احترافي للتسويق والمحتوى الترويجي',
-        price: 0,
-        image: 'https://i.postimg.cc/6p9kZy1w/service-video-production.png'
-    },
-    {
-        id: 'presentation-creation',
-        nameEn: 'Professional Presentation Creation',
-        nameAr: 'إنشاء العروض التقديمية الاحترافية',
-        descriptionEn: 'Engaging presentations that captivate your audience',
-        descriptionAr: 'عروض تقديمية جذابة تأسر جمهورك',
-        price: 0,
-        image: 'https://i.postimg.cc/zfQ64pDX/service-presentation-creation.png'
-    },
-    {
-        id: 'ai-automation',
-        nameEn: 'AI Agent Automation',
-        nameAr: 'أتمتة وكلاء الذكاء الاصطناعي',
-        descriptionEn: 'Intelligent automation solutions to streamline your business processes',
-        descriptionAr: 'حلول أتمتة ذكية لتبسيط عمليات أعمالك',
-        price: 0,
-        image: 'https://i.postimg.cc/zvCQbrCV/service-ai-automation.png'
-    },
-    {
-        id: 'brochure-design',
-        nameEn: 'Brochure Design',
-        nameAr: 'تصميم البروشورات',
-        descriptionEn: 'Professional brochures that effectively communicate your message',
-        descriptionAr: 'بروشورات احترافية تنقل رسالتك بفعالية',
-        price: 0,
-        image: 'https://i.postimg.cc/jqPmkzpt/service-brochure-design.png'
-    },
-    {
-        id: 'marketing-social-media',
-        nameEn: 'Marketing and Social Media',
-        nameAr: 'التسويق ووسائل التواصل الاجتماعي',
-        descriptionEn: 'Comprehensive digital marketing strategies and social media management',
-        descriptionAr: 'استراتيجيات تسويق رقمي شاملة وإدارة وسائل التواصل الاجتماعي',
-        price: 0,
-        image: 'https://i.postimg.cc/hPn6FXnx/service-marketing-social-media.png'
-    },
-    {
-        id: 'podcast-recording',
-        nameEn: 'Podcast Recording',
-        nameAr: 'تسجيل البودكاست',
-        descriptionEn: 'Professional podcast recording and production services',
-        descriptionAr: 'خدمات تسجيل وإنتاج البودكاست الاحترافية',
-        price: 0,
-        image: 'https://i.postimg.cc/YqxVtt2P/service-podcast-recording.png'
-    },
-    {
-        id: 'studio-photography',
-        nameEn: 'Studio Photography',
-        nameAr: 'التصوير الاستوديو',
-        descriptionEn: 'High-quality studio photography for portraits and products',
-        descriptionAr: 'تصوير استوديو عالي الجودة للصور الشخصية والمنتجات',
-        price: 0,
-        image: 'https://i.postimg.cc/nhRPQTDY/service-studio-photography.png'
-    },
-    {
-        id: 'product-photography',
-        nameEn: 'Product Photography',
-        nameAr: 'تصوير المنتجات',
-        descriptionEn: 'Professional product photography for e-commerce and marketing',
-        descriptionAr: 'تصوير منتجات احترافي للتجارة الإلكترونية والتسويق',
-        price: 0,
-        image: 'https://i.postimg.cc/jjB3M5vD/service-product-photography.png'
-    },
-    {
-        id: 'video-filming',
-        nameEn: 'Video Filming for Projects, Seminars, and Graduations',
-        nameAr: 'تصوير فيديو للمشاريع والندوات والتخرج',
-        descriptionEn: 'Professional event videography for special occasions',
-        descriptionAr: 'تصوير فيديو احترافي للفعاليات والمناسبات الخاصة',
-        price: 0,
-        image: 'https://i.postimg.cc/QtLSpzx5/service-video-filming.png'
-    },
-    {
-        id: 'ai-task-completion',
-        nameEn: 'AI Task Completion',
-        nameAr: 'إنجاز المهام بالذكاء الاصطناعي',
-        descriptionEn: 'Automated task completion using advanced AI technologies',
-        descriptionAr: 'إنجاز المهام الآلي باستخدام تقنيات الذكاء الاصطناعي المتقدمة',
-        price: 0,
-        image: 'https://i.postimg.cc/FRjpGx76/service-ai-task-completion.png'
-    }
-];
 
 // Translation Data
 const translations = {
@@ -431,7 +274,23 @@ function searchServices(term) {
 }
 
 // Services functions
-function renderServices(servicesToRender = services) {
+async function renderServices(servicesToRender) {
+    if (!servicesToRender) {
+        try {
+            const response = await fetch('/api/services');
+            const data = await response.json();
+            if (data.success) {
+                services = data.services;
+                renderServices(services);
+            } else {
+                console.error('Error fetching services:', data.error);
+            }
+        } catch (error) {
+            console.error('Error fetching services:', error);
+        }
+        return;
+    }
+
     const servicesGrid = document.getElementById('servicesGrid');
     servicesGrid.innerHTML = '';
     
@@ -748,21 +607,14 @@ function addMessage(content, type) {
 }
 
 async function callGeminiAPI(message) {
-    const systemPrompt = currentLanguage === 'ar' ? 
-        `أنت مساعد ذكي لشركة "انا استطيع فعل اي شي" الموجودة في أبو ظبي، جزيرة ياس. نحن نقدم خدمات رقمية متنوعة بما في ذلك تصميم المواقع ($0)، تطوير التطبيقات ($0)، السيرة الذاتية ($12)، التصميم الجرافيكي ($50)، وغيرها من الخدمات. يمكن للعملاء الدفع عبر Coffee (https://coff.ee/moayad_dughmosh)، Apple Pay، أو بطاقات الائتمان. للتواصل: moayaddughmosh@gmail.com أو +971545489973. أجب بالعربية بطريقة مفيدة ومهنية.` :
-        `You are an AI assistant for "I Am Gonna Do It" company located in Abu Dhabi, Yas Island. We offer various digital services including Website Design ($0), App Development ($0), CV Creation ($12), Graphic Design ($50), and more. Customers can pay via Coffee (https://coff.ee/moayad_dughmosh), Apple Pay, or credit cards. Contact: moayaddughmosh@gmail.com or +971545489973. Respond helpfully and professionally in English.`;
-    
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`, {
+    const response = await fetch('/api/chat', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            contents: [{
-                parts: [{
-                    text: `${systemPrompt}\n\nUser: ${message}`
-                }]
-            }]
+            message: message,
+            language: currentLanguage
         })
     });
     
@@ -771,32 +623,11 @@ async function callGeminiAPI(message) {
     }
     
     const data = await response.json();
-    return data.candidates[0].content.parts[0].text;
-}
-
-// API Key functions
-function openApiKeyModal() {
-    document.getElementById('apiKeyModal').classList.add('active');
-    document.getElementById('apiKeyInput').value = apiKey;
-}
-
-function closeApiKeyModal() {
-    document.getElementById('apiKeyModal').classList.remove('active');
-}
-
-function saveApiKey() {
-    const newApiKey = document.getElementById('apiKeyInput').value.trim();
-    
-    if (!newApiKey) {
-        alert(currentLanguage === 'ar' ? 'يرجى إدخال مفتاح API صحيح' : 'Please enter a valid API key');
-        return;
+    if (!data.success) {
+        throw new Error(data.error || 'API request failed');
     }
     
-    apiKey = newApiKey;
-    localStorage.setItem('geminiApiKey', apiKey);
-    
-    alert(currentLanguage === 'ar' ? 'تم حفظ مفتاح API بنجاح!' : 'API key saved successfully!');
-    closeApiKeyModal();
+    return data.response;
 }
 
 // Utility functions
