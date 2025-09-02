@@ -40,7 +40,8 @@ SERVICES = [
         "name_ar": "تصميم المواقع",
         "description_en": "Professional responsive websites with modern design and optimal user experience",
         "description_ar": "مواقع إلكترونية احترافية متجاوبة مع تصميم حديث وتجربة مستخدم مثلى",
-        "price": 299
+        "price": 299,
+        "image": "https://placehold.co/400x300/1dbacf/ffffff?text=Website+Design"
     },
     {
         "id": "app-development",
@@ -48,7 +49,8 @@ SERVICES = [
         "name_ar": "تطوير التطبيقات الاحترافية",
         "description_en": "Custom mobile and web applications built with cutting-edge technology",
         "description_ar": "تطبيقات جوال ويب مخصصة مبنية بأحدث التقنيات",
-        "price": 499
+        "price": 499,
+        "image": "https://placehold.co/400x300/11bcff/ffffff?text=App+Development"
     },
     {
         "id": "cv-creation",
@@ -56,7 +58,8 @@ SERVICES = [
         "name_ar": "إنشاء السيرة الذاتية الاحترافية (نظام ATS)",
         "description_en": "ATS-optimized resumes that pass automated screening systems",
         "description_ar": "سير ذاتية محسنة لأنظمة ATS تجتاز أنظمة الفحص الآلي",
-        "price": 99
+        "price": 99,
+        "image": "https://placehold.co/400x300/ec4899/ffffff?text=CV+Creation"
     },
     {
         "id": "graphic-design",
@@ -64,7 +67,8 @@ SERVICES = [
         "name_ar": "التصميم الجرافيكي وإنشاء الشعارات والإعلانات والملصقات",
         "description_en": "Creative visual designs for branding, marketing, and promotional materials",
         "description_ar": "تصاميم بصرية إبداعية للعلامة التجارية والتسويق والمواد الترويجية",
-        "price": 199
+        "price": 199,
+        "image": "https://placehold.co/400x300/10b981/ffffff?text=Graphic+Design"
     },
     {
         "id": "ui-ux-design",
@@ -72,7 +76,8 @@ SERVICES = [
         "name_ar": "تصميم واجهات المواقع",
         "description_en": "User-centered interface design for optimal user experience",
         "description_ar": "تصميم واجهات محورها المستخدم لتجربة مستخدم مثلى",
-        "price": 349
+        "price": 349,
+        "image": "https://placehold.co/400x300/f59e0b/ffffff?text=UI/UX+Design"
     },
     {
         "id": "engineering-drawing",
@@ -80,7 +85,8 @@ SERVICES = [
         "name_ar": "الرسم الهندسي",
         "description_en": "Technical drawings and blueprints for engineering projects",
         "description_ar": "رسوم تقنية ومخططات للمشاريع الهندسية",
-        "price": 149
+        "price": 149,
+        "image": "https://placehold.co/400x300/ef4444/ffffff?text=Engineering+Drawing"
     },
     {
         "id": "ai-models",
@@ -88,7 +94,8 @@ SERVICES = [
         "name_ar": "نماذج وأنظمة الذكاء الاصطناعي",
         "description_en": "Custom AI solutions and machine learning models for your business",
         "description_ar": "حلول ذكاء اصطناعي مخصصة ونماذج تعلم آلي لأعمالك",
-        "price": 799
+        "price": 799,
+        "image": "https://placehold.co/400x300/1f2937/ffffff?text=AI+Models"
     },
     {
         "id": "video-production",
@@ -96,7 +103,8 @@ SERVICES = [
         "name_ar": "فيديوهات إعلانية وتصوير المشاريع",
         "description_en": "Professional video production for marketing and promotional content",
         "description_ar": "إنتاج فيديو احترافي للتسويق والمحتوى الترويجي",
-        "price": 599
+        "price": 599,
+        "image": "https://placehold.co/400x300/6b7280/ffffff?text=Video+Production"
     },
     {
         "id": "presentation-creation",
@@ -104,7 +112,8 @@ SERVICES = [
         "name_ar": "إنشاء العروض التقديمية الاحترافية",
         "description_en": "Engaging presentations that captivate your audience",
         "description_ar": "عروض تقديمية جذابة تأسر جمهورك",
-        "price": 149
+        "price": 149,
+        "image": "https://placehold.co/400x300/7d8388/ffffff?text=Presentations"
     },
     {
         "id": "ai-automation",
@@ -112,7 +121,8 @@ SERVICES = [
         "name_ar": "أتمتة وكلاء الذكاء الاصطناعي",
         "description_en": "Intelligent automation solutions to streamline your business processes",
         "description_ar": "حلول أتمتة ذكية لتبسيط عمليات أعمالك",
-        "price": 699
+        "price": 699,
+        "image": "https://placehold.co/400x300/d1d5db/ffffff?text=AI+Automation"
     },
     {
         "id": "brochure-design",
@@ -120,7 +130,8 @@ SERVICES = [
         "name_ar": "تصميم البروشورات",
         "description_en": "Professional brochures that effectively communicate your message",
         "description_ar": "بروشورات احترافية تنقل رسالتك بفعالية",
-        "price": 179
+        "price": 179,
+        "image": "https://placehold.co/400x300/111827/ffffff?text=Brochure+Design"
     },
     {
         "id": "marketing-social-media",
@@ -128,7 +139,8 @@ SERVICES = [
         "name_ar": "التسويق ووسائل التواصل الاجتماعي",
         "description_en": "Comprehensive digital marketing strategies and social media management",
         "description_ar": "استراتيجيات تسويق رقمي شاملة وإدارة وسائل التواصل الاجتماعي",
-        "price": 399
+        "price": 399,
+        "image": "https://placehold.co/400x300/1f2937/ffffff?text=Marketing"
     },
     {
         "id": "podcast-recording",
@@ -136,7 +148,8 @@ SERVICES = [
         "name_ar": "تسجيل البودكاست",
         "description_en": "Professional podcast recording and production services",
         "description_ar": "خدمات تسجيل وإنتاج البودكاست الاحترافية",
-        "price": 249
+        "price": 249,
+        "image": "https://placehold.co/400x300/374151/ffffff?text=Podcast+Recording"
     },
     {
         "id": "studio-photography",
@@ -144,7 +157,8 @@ SERVICES = [
         "name_ar": "التصوير الاستوديو",
         "description_en": "High-quality studio photography for portraits and products",
         "description_ar": "تصوير استوديو عالي الجودة للصور الشخصية والمنتجات",
-        "price": 199
+        "price": 199,
+        "image": "https://placehold.co/400x300/1dbacf/ffffff?text=Studio+Photography"
     },
     {
         "id": "product-photography",
@@ -152,7 +166,8 @@ SERVICES = [
         "name_ar": "تصوير المنتجات",
         "description_en": "Professional product photography for e-commerce and marketing",
         "description_ar": "تصوير منتجات احترافي للتجارة الإلكترونية والتسويق",
-        "price": 179
+        "price": 179,
+        "image": "https://placehold.co/400x300/11bcff/ffffff?text=Product+Photography"
     },
     {
         "id": "video-filming",
@@ -160,7 +175,8 @@ SERVICES = [
         "name_ar": "تصوير فيديو للمشاريع والندوات والتخرج",
         "description_en": "Professional event videography for special occasions",
         "description_ar": "تصوير فيديو احترافي للفعاليات والمناسبات الخاصة",
-        "price": 399
+        "price": 399,
+        "image": "https://placehold.co/400x300/ec4899/ffffff?text=Video+Filming"
     },
     {
         "id": "ai-task-completion",
@@ -168,7 +184,8 @@ SERVICES = [
         "name_ar": "إنجاز المهام بالذكاء الاصطناعي",
         "description_en": "Automated task completion using advanced AI technologies",
         "description_ar": "إنجاز المهام الآلي باستخدام تقنيات الذكاء الاصطناعي المتقدمة",
-        "price": 599
+        "price": 599,
+        "image": "https://placehold.co/400x300/10b981/ffffff?text=AI+Task+Completion"
     }
 ]
 
